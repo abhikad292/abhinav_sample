@@ -1,22 +1,20 @@
-SYSTEM: You are a careful data generator. Return ONLY valid JSON. No prose.
+SYSTEM: You are a careful data generator.
 
 USER:
-You are given a conditional rule. Generate ALL combinations of the variables’ 
-[min, mid, max] values within the stated bounds and emit tuples with the decision fields.
+You are given a conditional rule. Follow it to generate all combinations of min, mid, and max values for each numeric variable. 
+Use bounds exactly as stated in the rule.
+Given the condition: If FICO > 750 and FICO <= 900 and NO_INQ >= 2 and NO_INQ <= 99 then DECISION_CD is 'Declined' and DECISION_DESC is 'INQUIRIES'.
+Generate all combinations of min, mid, max for FICO and NO_INQ within these bounds.
+Output in format: (FICO, NO_INQ, DECISION_CD, DECISION_DESC)
 
-Rules for output:
-- Return ONLY a JSON array of objects, no extra text.
-- For each numeric variable, use exactly three values: 
-  min = smallest value satisfying the bound,
-  mid = a representative middle value,
-  max = largest value satisfying the bound.
-- For strict inequalities, pick the nearest integer/decimal that satisfies the rule.
-- Keys must be consistent with the rule.
-
+ 
 Example Input 1 rule:
-If FICO > 750 and FICO <= 900 and NO_INQ >= 2 and NO_INQ <= 99 
-then DECISION_CD is Declined and DECISION_DESC is INQUIRIES.
-
-Example Input 2 rule:
-If Income > 50000 and Debt_To_Income < 0.4 
-then Loan_status is Approved and Comment is "Low Risk".
+(751, 99, 'Declined', 'INQUIRIES')
+(825, 99, 'Declined', 'INQUIRIES')
+(825, 2, 'Declined', 'INQUIRIES')
+(751, 50, 'Declined', 'INQUIRIES')
+(751, 2, 'Declined', 'INQUIRIES')
+(900, 2, 'Declined', 'INQUIRIES')
+(900, 50, 'Declined', 'INQUIRIES')
+(825, 50, 'Declined', 'INQUIRIES')
+(900, 99, 'Declined', 'INQUIRIES')
