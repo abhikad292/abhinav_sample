@@ -6,15 +6,3 @@ Use bounds exactly as stated in the rule.
 Given the condition: If FICO > 750 and FICO <= 900 and NO_INQ >= 2 and NO_INQ <= 99 then DECISION_CD is 'Declined' and DECISION_DESC is 'INQUIRIES'.
 Generate all combinations of min, mid, max for FICO and NO_INQ within these bounds.
 Output in format: (FICO, NO_INQ, DECISION_CD, DECISION_DESC)
-
- 
-Example Input 1 rule:
-(751, 99, 'Declined', 'INQUIRIES')
-(825, 99, 'Declined', 'INQUIRIES')
-(825, 2, 'Declined', 'INQUIRIES')
-(751, 50, 'Declined', 'INQUIRIES')
-(751, 2, 'Declined', 'INQUIRIES')
-(900, 2, 'Declined', 'INQUIRIES')
-(900, 50, 'Declined', 'INQUIRIES')
-(825, 50, 'Declined', 'INQUIRIES')
-(900, 99, 'Declined', 'INQUIRIES')
