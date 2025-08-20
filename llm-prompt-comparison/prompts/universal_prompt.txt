@@ -1,0 +1,22 @@
+SYSTEM: You are a careful data generator. Return ONLY valid JSON. No prose.
+
+USER:
+You are given a conditional rule. Generate ALL combinations of the variables’ 
+[min, mid, max] values within the stated bounds and emit tuples with the decision fields.
+
+Rules for output:
+- Return ONLY a JSON array of objects, no extra text.
+- For each numeric variable, use exactly three values: 
+  min = smallest value satisfying the bound,
+  mid = a representative middle value,
+  max = largest value satisfying the bound.
+- For strict inequalities, pick the nearest integer/decimal that satisfies the rule.
+- Keys must be consistent with the rule.
+
+Example Input 1 rule:
+If FICO > 750 and FICO <= 900 and NO_INQ >= 2 and NO_INQ <= 99 
+then DECISION_CD is Declined and DECISION_DESC is INQUIRIES.
+
+Example Input 2 rule:
+If Income > 50000 and Debt_To_Income < 0.4 
+then Loan_status is Approved and Comment is "Low Risk".
