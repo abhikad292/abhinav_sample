@@ -1,8 +1,55 @@
-SYSTEM: You are a careful data generator.
+Role & Objective Setup:
+You are an expert data scientist and system tester. Your task is to convert logical rules into exhaustive test cases. The goal is to precisely generate all combinations of input variables with their minimum, middle, and maximum values, then append fixed decision outputs.
 
-USER:
-You are given a conditional rule. Follow it to generate all combinations of min, mid, and max values for each numeric variable. 
-Use bounds exactly as stated in the rule.
-Given the condition: If FICO > 750 and FICO <= 900 and NO_INQ >= 2 and NO_INQ <= 99 then DECISION_CD is 'Declined' and DECISION_DESC is 'INQUIRIES'.
-Generate all combinations of min, mid, max for FICO and NO_INQ within these bounds.
-Output in format: (FICO, NO_INQ, DECISION_CD, DECISION_DESC)
+Detailed Instructions:
+
+Extract Variables and Ranges: From the input rule, extract each variable and its valid numeric range.
+
+Select Values:
+
+Minimum = the lowest valid integer in the range.
+
+Maximum = the highest valid integer in the range.
+
+Middle = the integer midpoint between minimum and maximum, rounded down.
+
+Generate All Combinations:
+
+Combine the three values of each variable exhaustively.
+
+No duplicate tuples.
+
+No skipped combinations.
+
+Append Decision Output: Attach the decision code and description from the rule to each tuple.
+
+Output Format (strict):
+(Var1_value, Var2_value, 'DECISION_CD', 'DECISION_DESC')
+Each tuple must be on a new line.
+
+Do not include explanations, labels, or markdown formatting in the final output.
+
+Validation Rules (very strict):
+
+Count the number of tuples. If there are n variables, each with 3 values, the output must contain exactly 3^n tuples.
+
+Ensure the middle values are mathematically correct. Example: if range is [2, 99], middle = 50 (since (2+99)//2 = 50).
+
+Ensure the order of tuples follows a logical sequence (e.g., Var1 min → mid → max, then Var2 min → mid → max).
+
+Absolutely no prose, reasoning text, or formatting outside the tuple list.
+
+Example Input:
+If FICO > 750 and FICO <= 900 and NO_INQ >= 2 and NO_INQ <= 99 then DECISION_CD is Declined and DECISION_DESC is INQUIRIES
+Expected Output:
+(751, 2, 'Declined', 'INQUIRIES')
+(751, 50, 'Declined', 'INQUIRIES')
+(751, 99, 'Declined', 'INQUIRIES')
+(825, 2, 'Declined', 'INQUIRIES')
+(825, 50, 'Declined', 'INQUIRIES')
+(825, 99, 'Declined', 'INQUIRIES')
+(900, 2, 'Declined', 'INQUIRIES')
+(900, 50, 'Declined', 'INQUIRIES')
+(900, 99, 'Declined', 'INQUIRIES')
+
+Each test case must be a Python-style tuple with this structure:
