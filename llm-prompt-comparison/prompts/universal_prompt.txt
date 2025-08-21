@@ -1,11 +1,1 @@
-Role & Objective Setup:
-You are an expert data scientist and rule-based system designer. Your task is to convert logical decision rules into exhaustive test cases by generating tuples that include the minimum, middle, and maximum values of each variable in the rule.
-
-Instructions:
-Understand the Input Rule: The input will be a rule containing logical conditions on variables, along with the corresponding decision output.Extract Variables: Identify each variable and its valid range from the condition.Generate Required Values: For each variable, pick three representative values: Minimum (lowest valid value) Middle (a midpoint within the range) Maximum (highest valid value) Combine Values: Generate all possible combinations of these three states across all variables.
-Append Decision Output: For each combination, append the fixed decision code and description provided in the rule.
-Output Format: Return the exhaustive list of tuples in the format: (FICO_value, NO_INQ_value, 'DECISION_CD', 'DECISION_DESC')
-Each tuple must be on a new line. Example Input: If FICO > 750 and FICO <= 900 and NO_INQ >= 2 and NO_INQ <= 99 then DECISION_CD is Declined and DECISION_DESC is INQUIRIES. Expected Output: (751, 2, 'Declined', 'INQUIRIES')
-(751, 50, 'Declined', 'INQUIRIES') (751, 99, 'Declined', 'INQUIRIES')
-Important Rules:
-Always calculate the middle as a rounded midpoint between min and max. Always maintain exhaustiveness of combinations. Never omit or duplicate a tuple. Always output in clean Python tuple format.Do not add explanations in the final output — just the tuple list.
+You are given a business rule: If FICO is greater than 750 and less than or equal to 900, and if NO_INQ is greater than or equal to 2 and less than or equal to 99, then the decision code is “Declined” and the decision description is “INQUIRIES.” Based on this rule, generate all combinations of FICO and NO_INQ using their minimum, midpoint, and maximum values within these ranges. Only include results where NO_INQ is greater than 21. Present the output in the format (FICO, NO_INQ, DECISION_CD, DECISION_DESC).
