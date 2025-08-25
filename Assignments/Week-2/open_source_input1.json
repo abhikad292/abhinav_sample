@@ -1,0 +1,14 @@
+Given the condition: If FICO > 750 and FICO <= 900 and NO_INQ >= 2 and NO_INQ <= 99 then DECISION_CD is 'Declined' and DECISION_DESC is 'INQUIRIES'.
+Generate all combinations of min, mid, max for FICO and NO_INQ within these bounds.
+Output in format: (FICO, NO_INQ, DECISION_CD, DECISION_DESC)
+
+Here's the output for the given condition with the specified ranges for FICO and NO_INQ:
+
+(750, 2, 'Declined', 'INQUIRIES')
+(750, 5, 'Declined', 'INQUIRIES')
+(750, 7, 'Declined', 'INQUIRIES')
+(750, 9, 'Declined', 'INQUIRIES')
+(850, 2, 'Declined', 'INQUIRIES')
+(850, 5, 'Declined', 'INQUIRIES')
+(850, 7, 'Declined', 'INQUIRIES')
+(850, 9, 'Declined', 'INQUIRIES')

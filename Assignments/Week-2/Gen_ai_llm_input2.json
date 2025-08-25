@@ -1,0 +1,14 @@
+The condition only specifies when a loan is approved and the comment is 'Low Risk'.  There are infinitely many combinations that satisfy this condition.  Here are a few examples to illustrate:
+
+
+* **(60000, 0.3, Approved, Low Risk)**  (Income > 50000 and Debt_To_Income < 0.4)
+* **(50001, 0.39, Approved, Low Risk)** (Income > 50000 and Debt_To_Income < 0.4)
+* **(100000, 0.2, Approved, Low Risk)** (Income > 50000 and Debt_To_Income < 0.4)
+* **(55000, 0.35, Approved, Low Risk)** (Income > 50000 and Debt_To_Income < 0.4)
+
+
+To represent all possibilities concisely, we can use mathematical notation:
+
+**(Income, Debt_To_Income, Loan_status, comment)  where Income > 50000 and 0 ≤ Debt_To_Income < 0.4 and Loan_status = 'Approved' and comment = 'Low Risk'**
+
+This notation captures all combinations that meet the criteria.  Any specific numerical examples would only be a subset of this infinite set.

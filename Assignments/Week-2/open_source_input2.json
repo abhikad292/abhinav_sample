@@ -1,0 +1,11 @@
+Given the condition: If Income > 50000 and Debt_To_Income < 0.4 then Loan_status is Approved and Comment is 'Low Risk'.
+Generate all the possible combination where loan status is approved and comment is low risk.
+Output in format: (Income, Debt_To_Income, Loan_status, comment)
+
+| Income | Debt_To_Income | Loan_status | comment |
+|---|---|---|---|
+| 51000 | 0.2 | Approved | Low Risk |
+| 55000 | 0.15 | Approved | Low Risk |
+| 60000 | 0.18 | Approved | Low Risk |
+| 70000 | 0.12 | Approved | Low Risk |
+| 80000 | 0.10 | Approved | Low Risk |

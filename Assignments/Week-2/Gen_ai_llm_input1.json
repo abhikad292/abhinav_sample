@@ -1,0 +1,26 @@
+The condition specifies ranges for FICO and NO_INQ.  We need to generate combinations representing the minimum, middle, and maximum values within those ranges.
+
+**FICO:**
+
+* Minimum: 751
+* Middle: 825 (approximately the middle of 751-900)
+* Maximum: 900
+
+**NO_INQ:**
+
+* Minimum: 2
+* Middle: 50 (approximately the middle of 2-99)
+* Maximum: 99
+
+
+This gives us a total of 3 x 3 = 9 combinations. Here's the output in the requested format:
+
+(751, 2, Declined, INQUIRIES)
+(751, 50, Declined, INQUIRIES)
+(751, 99, Declined, INQUIRIES)
+(825, 2, Declined, INQUIRIES)
+(825, 50, Declined, INQUIRIES)
+(825, 99, Declined, INQUIRIES)
+(900, 2, Declined, INQUIRIES)
+(900, 50, Declined, INQUIRIES)
+(900, 99, Declined, INQUIRIES)
